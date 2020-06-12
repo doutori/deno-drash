@@ -1,9 +1,14 @@
 import { Drash } from "https://deno.land/x/drash@v1.0.5/mod.ts";
 import HomeResource from "./resources/home.ts";
+import { UsersResource, UserResource } from "./resources/users.ts";
 
 const server = new Drash.Http.Server({
-  response_output: "text/html",
-  resources: [HomeResource],
+  response_output: "application/json",
+  resources: [
+    HomeResource,
+    UsersResource,
+    UserResource,
+  ],
 });
 
 const opt = {
