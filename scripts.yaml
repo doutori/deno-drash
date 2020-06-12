@@ -1,0 +1,11 @@
+# https://github.com/umbopepato/velociraptor/
+
+allow:
+  - net
+  - read
+
+scripts:
+  start: main.ts
+  dev: denon run -A main.ts
+  clean: rm -f bundle.ts
+  bundle: deno bundle --unstable  main.ts > bundle.ts
